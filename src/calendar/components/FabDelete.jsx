@@ -17,7 +17,7 @@ export const FabDelete = () => {
          onClick={handleDelete}
       >
          {" "}
-         <i className="fas fa-trash-alt"></i>
+         <i className="bi bi-trash"></i>
       </button>
    );
 };

@@ -1,20 +1,32 @@
-import { useAuthStore, useCalendarStore } from "../../hooks";
+
+import React from "react";
+import { useAuthStore, } from "../../hooks";
+import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
    const { user, startLogout } = useAuthStore();
-   // const { startClearEvents } = useCalendarStore();
+
 
    return (
       <div className="navbar navbar-dark bg-dark mb-4 px-4">
          <span className="navbar-brand">
-            <i className="fas fa-calendar-alt"></i>
+            <i className="bi bi-calendar"></i>
             &nbsp; {user.name}
          </span>
 
-         <button className="btn btn-outline-danger" onClick={startLogout}>
-            <i className="fas fa-sign-out-alt"></i> &nbsp;
-            <span>Salir</span>
-         </button>
+         <div>
+            <Link className="btn btn-primary mx-3" to={"/"}>
+               <i className="bi bi-backspace"></i> &nbsp;
+               Pagina Principal
+            </Link>
+
+            <button className="btn btn-outline-danger" onClick={startLogout}>
+               <i className="bi bi-box-arrow-left"></i> &nbsp;
+               <span>Salir</span>
+            </button>
+
+         </div>
+
       </div>
    );
 };
